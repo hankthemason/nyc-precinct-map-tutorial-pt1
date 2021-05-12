@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react'
 import './App.css';
+import { Map } from './Map'
+
+const url = 'https://opendata.arcgis.com/datasets/c35786feb0ac4d1b964f41f874f151c1_0.geojson'
 
 function App() {
+
+  const [data, setData] = useState()
+
+  useEffect(() => {
+    fetch(url)
+    .then(res => res.json())
+    .then(res => setData(res))
+  }, [])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Map geoJson={data}/>
     </div>
   );
 }
