@@ -11,7 +11,6 @@ In this tutorial, I take you through the steps of setting up a new React app, fi
 3. Run `npm run start` or `yarn start`, and then navigate to http://localhost:3000 in your web browser.
 
 ## Built with
-
 [React.js](https://reactjs.org/)
 [D3](https://d3js.org)
 
